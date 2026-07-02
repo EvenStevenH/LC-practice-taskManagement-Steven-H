@@ -6,7 +6,12 @@ export default function TaskDetail({ tasks }) {
 	// check invalid/missing task id
 	const task = tasks.find((task) => String(task.id) === taskId);
 	if (!task) {
-		return <div>Task not found!</div>;
+		return (
+			<div>
+				<p>Task not found!</p>
+				<Link to={`/`}>Back</Link>
+			</div>
+		);
 	}
 
 	return (
